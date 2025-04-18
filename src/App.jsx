@@ -52,6 +52,15 @@ function App() {
     setVolume(newVolume)
   }
 
+  const handleSeek = (e) => {
+    const bar = e.target
+    const clickX = e.nativeEvent.offsetX
+    const width = bar.clientWidth
+    const newTime = (clickX / width) * duration
+    audioRef.current.currentTime = newTime
+    setCurrentTime(newTime)
+  }
+
   //changing song with current state of playing
   useEffect(() => {
     const audio = audioRef.current;
@@ -63,10 +72,13 @@ function App() {
 
   return (
     <>
-      <h1 className='flex flex-center justify-center'>Music Player</h1>
+      <h1 className='flex justify-center'>Music Player</h1>
 
       <Player
         song={playlist[currentSongIndex]}
+        currentTime={currentTime}
+        duration={duration}
+        handleSeek={handleSeek}
       />
 
       <Controls
