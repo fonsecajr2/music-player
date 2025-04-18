@@ -27,7 +27,18 @@ const Player = ({ song, currentTime, duration, handleSeek }) => {
             marginTop: "1rem"
           }}
         >
-          
+          <div
+            className="progress-filled"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              height: "100%",
+              backgroundColor: "#007BFF",
+              width: `${(currentTime / duration) * 100}%`,
+              borderRadius: "5px"
+            }}
+          />
         </div>
         <span>{formatTime(duration)}</span>
       </div>
