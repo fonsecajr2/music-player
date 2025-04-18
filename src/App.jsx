@@ -18,7 +18,7 @@ function App() {
 
   const audioRef = useRef(null)
 
- const playPause = function togglePlayPause () {
+  const playPause = function togglePlayPause () {
     if (isPlaying){
       audioRef.current.pause()
     } else {
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <h1 className='bg-amber-200'>Music Player</h1>
+      <h1 className='flex flex-center justify-center'>Music Player</h1>
 
       <Player
         song={playlist[currentSongIndex]}
@@ -63,12 +63,12 @@ function App() {
         playPause={playPause}
         nextSong={nextSong}
         prevSong={prevSong}
-        
       />
 
       <Playlist 
         playlist={playlist}
         setCurrentSongIndex={setCurrentSongIndex}
+        setPlaylist={setPlaylist}
       />
 
       {playlist[currentSongIndex]?.src && <audio 
