@@ -1,12 +1,18 @@
 import React from "react";
+import Section from "./ui/Section";
 
-const Player = ( {song} ) => {
-    return (
-        <div>
-            <h1>{song.title}</h1>
-            <p>{song.artist}</p>
-        </div>
-    )
-}
+const Player = ({ song }) => {
+  return (
+    <Section className="text-center">
+      <img
+        src={song.cover}
+        alt="Cover"
+        className="w-40 h-40 rounded-lg mx-auto shadow-lg"
+      />
+      <h2 className="text-xl font-semibold mt-4">{song.title}</h2>
+      <p className="text-gray-600">{song.artist}</p>
+    </Section>
+  );
+};
 
-export default Player
+export default Player;

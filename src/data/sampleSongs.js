@@ -4,7 +4,7 @@ export const sampleSongs = [
     title: "Inspiration",
     artist: "Lo-Fi Beats",
     album: "Deep Focus",
-    cover: "/assets/img/lofi.jpg",
+    cover: "/assets/img/react.svg",
     src: "/assets/music/inspiration.mp3",
   },
   {
@@ -12,7 +12,7 @@ export const sampleSongs = [
     title: "Dreamscape",
     artist: "Ambient Flow",
     album: "Night Chill",
-    cover: "/assets/img/dream.jpg",
+    cover: "/assets/img/vite.svg",
     src: "/assets/music/dreamscape.mp3",
   },
 ];

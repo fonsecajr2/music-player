@@ -53,16 +53,17 @@ function App() {
   return (
     <>
       <h1 className='bg-amber-200'>Music Player</h1>
+
+      <Player
+        song={playlist[currentSongIndex]}
+      />
+
       <Controls
         isPlaying={isPlaying}
         playPause={playPause}
         nextSong={nextSong}
         prevSong={prevSong}
         
-      />
-
-      <Player
-        song={playlist[currentSongIndex]}
       />
 
       <Playlist 

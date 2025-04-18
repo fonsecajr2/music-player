@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "./ui/Button";
 
 const Controls = ({
     isPlaying,
@@ -9,16 +10,17 @@ const Controls = ({
     // handleVolumeChange
 }) => {
     return(
-        <div className="controls">
-            <button onClick={playPause} className="m-1">
-                {isPlaying ? "Pause" : "Play"} 
-            </button>
-            <button onClick={nextSong} className="m-1">
-                next
-            </button>
-            <button onClick={prevSong} className="m-1">
+        <div className="flex items-center justify-center gap-4 my-6" >
+            <Button onClick={prevSong} variant="default">
                 prev
-            </button>
+            </Button>
+            <Button onClick={playPause} variant="primary">
+                {isPlaying ? "Pause" : "Play"} 
+            </Button>
+            <Button onClick={nextSong} variant="default">
+                next
+            </Button>
+            
         </div>
     )
 }
