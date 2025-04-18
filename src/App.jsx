@@ -15,9 +15,12 @@ function App() {
   //controlling time and duration
   const [currentTime, setCurrentTime] = useState(0)
   const [duration, setDuration] = useState(0)
+  //controlling volume
+  const [volume, setVolume] = useState(0.5)
 
   const audioRef = useRef(null)
 
+  //function to play the song
   const playPause = function togglePlayPause () {
     if (isPlaying){
       audioRef.current.pause()
@@ -28,6 +31,7 @@ function App() {
     
   }
 
+  //function to time and formatTime
   const handleTimeUpdate = () => {
     const audio = audioRef.current
     setCurrentTime(audio.currentTime)
@@ -42,6 +46,13 @@ function App() {
     setCurrentSongIndex((prevIndex)=> prevIndex === 0 ? playlist.length - 1 : (prevIndex - 1))
   }
 
+  const handleVolumeChange = (e) => {
+    const newVolume = parseFloat(e.target.value)
+    audioRef.current.volume = newVolume
+    setVolume(newVolume)
+  }
+
+  //changing song with current state of playing
   useEffect(() => {
     const audio = audioRef.current;
     audio.load()
@@ -63,6 +74,8 @@ function App() {
         playPause={playPause}
         nextSong={nextSong}
         prevSong={prevSong}
+        handleVolumeChange={handleVolumeChange}
+        volume={volume}
       />
 
       <Playlist 
@@ -75,7 +88,7 @@ function App() {
         ref={audioRef}
         src = {playlist[currentSongIndex].src}
         onTimeUpdate={handleTimeUpdate}
-        // onEnd={nextSong}
+        onEnd={nextSong}
       />}
       
     </>
