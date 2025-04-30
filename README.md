@@ -2,6 +2,9 @@
 
 A simple and modern music player web application built with React 19, Vite, and TailwindCSS. This app allows you to play, pause, skip, and control the volume of songs from a playlist with a clean and responsive user interface.
 
+##Live Link
+
+You can test the project by clicking here: https://student-teacher-appointment-eight.vercel.app/. Enjoy!
 ## Features
 
 - Play, pause, and skip songs (next/previous)
