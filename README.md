@@ -18,7 +18,7 @@ You can test the project by clicking here: https://student-teacher-appointment-e
 
 1. Clone the repository:
    ```bash
-   git clone <repository-url>
+   git clone https://github.com/fonsecajr2/music-player.git
    cd music-player
    ```
 
