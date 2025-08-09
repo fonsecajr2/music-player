@@ -4,7 +4,7 @@ A simple and modern music player web application built with React 19, Vite, and 
 
 ## Live Link
 
-You can test the project by clicking here: https://student-teacher-appointment-eight.vercel.app/. Enjoy!
+You can test the project by clicking here: https://music-player-amber-eight.vercel.app/. Enjoy!
 ## Features
 
 - Play, pause, and skip songs (next/previous)
